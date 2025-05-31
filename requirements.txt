@@ -1,0 +1,3 @@
+mcp
+tweepy
+python-dotenv 
