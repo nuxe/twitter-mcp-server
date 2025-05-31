@@ -3,9 +3,6 @@ import os
 import tweepy
 from mcp.server.fastmcp import FastMCP
 from mcp.server.stdio import stdio_server
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Initialize MCP server
 app = FastMCP("twitter-mcp-server")

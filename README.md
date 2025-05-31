@@ -18,16 +18,17 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Twitter API Setup
+### 2. Get Twitter API Credentials
 
-1. Create a Twitter Developer account at https://developer.twitter.com/
-2. Create a new app and get your API credentials
-3. Create a `.env` file using the template provided in `twitter_credentials_template.txt`:
-
-```bash
-cp twitter_credentials_template.txt .env
-# Edit .env with your actual credentials
-```
+1. Go to https://developer.twitter.com/
+2. Create a Twitter Developer account
+3. Create a new app
+4. Get your credentials from the "Keys and Tokens" tab:
+   - API Key
+   - API Secret  
+   - Access Token
+   - Access Token Secret
+   - Bearer Token
 
 ### 3. Configure Claude Desktop
 
@@ -40,24 +41,20 @@ Add this to your Claude Desktop config (`~/Library/Application Support/Claude/cl
       "command": "python",
       "args": ["/absolute/path/to/twitter-mcp-server/server.py"],
       "env": {
-        "TWITTER_API_KEY": "your_api_key",
-        "TWITTER_API_SECRET": "your_api_secret", 
-        "TWITTER_ACCESS_TOKEN": "your_access_token",
-        "TWITTER_ACCESS_TOKEN_SECRET": "your_access_token_secret",
-        "TWITTER_BEARER_TOKEN": "your_bearer_token"
+        "TWITTER_API_KEY": "your_actual_api_key",
+        "TWITTER_API_SECRET": "your_actual_api_secret", 
+        "TWITTER_ACCESS_TOKEN": "your_actual_access_token",
+        "TWITTER_ACCESS_TOKEN_SECRET": "your_actual_access_token_secret",
+        "TWITTER_BEARER_TOKEN": "your_actual_bearer_token"
       }
     }
   }
 }
 ```
 
-### 4. Test the Server
+**Important:** Replace the placeholder values with your actual Twitter API credentials.
 
-```bash
-python server.py
-```
-
-### 5. Restart Claude Desktop
+### 4. Restart Claude Desktop
 
 After configuration, restart Claude Desktop to load the MCP server.
 
@@ -79,5 +76,4 @@ This server is designed for Twitter's free tier:
 
 - Python 3.10+
 - MCP SDK
-- Tweepy (Twitter API v2)
-- Environment variables for credentials 
+- Tweepy (Twitter API v2) 
