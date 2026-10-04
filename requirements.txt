@@ -1,2 +1,2 @@
-mcp
-tweepy 
+mcp==2.3.0
+tweepy==4.17.0
